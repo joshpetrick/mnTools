@@ -2,9 +2,17 @@
 BALANCE=$(/usr/local/bin/chaincoind getinfo | grep -m 1 balance)
 IPADDR=$(ifconfig eth0 | grep -oP 'inet addr:\K\S+')
 STATUS=$(/usr/local/bin/chaincoind masternodelist status $IPADDR|grep -m 1 "$IPADDR")
+CATEGORY=$(/usr/local/bin/chaincoind listtransactions | grep "category" | tail -1)
+AMOUNT=$(/usr/local/bin/chaincoind listtransactions | grep "amount" | tail -1)
+TIMERECIEVED=$(/usr/local/bin/chaincoind listtransactions | grep "timereceived" | tail -1)
+
 MNADDRESS="CTCJM7BHzrSYuR4QYYYcsDLxfe2mNxE2pg"
 
-printf "\n$(tput setf 2)Masternode $BALANCE$(tput sgr0)"
-printf "\n$(tput setf 3)Status:$STATUS$(tput sgr0)\n"
+printf "\n$(tput setf 2)Masternode\t$BALANCE$(tput sgr0)"
+printf "\n$(tput setf 2)Masternode\t$CATEGORY$(tput sgr0)"
+printf "\n$(tput setf 2)Masternode\t$AMOUNT$(tput sgr0)"
+printf "\n$(tput setf 2)Masternode\t$TIMERECIEVED$(tput sgr0)"
+
+printf "\n$(tput setf 3)Status:\t$STATUS$(tput sgr0)\n"
 
 printf "\n\n$(tput setf 5)Donations:$(tput sgr0)\t$MNADDRESS\n\n"
