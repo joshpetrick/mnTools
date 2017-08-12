@@ -9,7 +9,7 @@ TIMERECIEVED=$(/usr/local/bin/chaincoind listtransactions | grep "timereceived" 
 
 MNADDRESS="CTCJM7BHzrSYuR4QYYYcsDLxfe2mNxE2pg"
 
-printf "\n$\t(tput setf 2)Masternode$BALANCE$(tput sgr0)"
+printf "\n\t$(tput setf 2)Masternode$BALANCE$(tput sgr0)"
 printf "\n$(tput setf 2)******************Last Transaction**********************"
 printf "\n\t$CATEGORY"
 printf "\n\t$AMOUNT"
