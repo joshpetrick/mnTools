@@ -1,7 +1,8 @@
+
 #!/bin/sh
 BALANCE=$(/usr/local/bin/chaincoind getinfo | grep -m 1 balance)
 IPADDR=$(ifconfig eth0 | grep -oP 'inet addr:\K\S+')
-STATUS=$(/usr/local/bin/chaincoind masternodelist status $IPADDR|grep -m 1 "$IP$
+STATUS=$(/usr/local/bin/chaincoind masternodelist status $IPADDR|grep -m 1 "$IPADDR")
 
 printf "\n$(tput setf 2)Masternode $BALANCE$(tput sgr0)"
 printf "\n$(tput setf 3)Status:$STATUS$(tput sgr0)\n"
