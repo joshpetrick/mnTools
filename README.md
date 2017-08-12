@@ -17,6 +17,8 @@ This tool will update your welcome message so that everytime you login to putty 
     * amount
     * time
     
+ ![alt text](https://github.com/joshpetrick/mnTools/blob/master/MNStatustool.PNG)
+    
 ##### Installing
 
 ```
