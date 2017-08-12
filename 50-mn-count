@@ -7,4 +7,4 @@ MNADDRESS="CTCJM7BHzrSYuR4QYYYcsDLxfe2mNxE2pg"
 printf "\n$(tput setf 2)Masternode $BALANCE$(tput sgr0)"
 printf "\n$(tput setf 3)Status:$STATUS$(tput sgr0)\n"
 
-printf "\n\n$(tput setf 4)Donations:$MNADDRESS$(tput sgr0)\n"
+printf "\n\n$(tput setf 5)Donations: $MNADDRESS$(tput sgr0)\n"
