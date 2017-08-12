@@ -1,6 +1,7 @@
 #!/bin/sh
 BALANCE=$(/usr/local/bin/chaincoind getinfo | grep -m 1 balance)
 IPADDR=$(ifconfig eth0 | grep -oP 'inet addr:\K\S+')
+
 STATUS=$(/usr/local/bin/chaincoind masternodelist status $IPADDR|grep -m 1 "$IPADDR")
 CATEGORY=$(/usr/local/bin/chaincoind listtransactions | grep "category" | tail -1)
 AMOUNT=$(/usr/local/bin/chaincoind listtransactions | grep "amount" | tail -1)
