@@ -37,6 +37,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Donations
 
-Chaincoin CX7Vqe8nWDouVnKiBwfvaPGLRCRvunKT6y
-PieCoin PXWMdAWg7Eym33jKAVyf3ZWLLiCAY5dQu3
-Bitcoin 18kd7yE2ZxbApErrJgWRFqX2sePZDosi95
+* <b>Chaincoin</b> ```CX7Vqe8nWDouVnKiBwfvaPGLRCRvunKT6y```
+* <b>PieCoin</b>   ```PXWMdAWg7Eym33jKAVyf3ZWLLiCAY5dQu3```
+* <b>Bitcoin</b>   ```18kd7yE2ZxbApErrJgWRFqX2sePZDosi95```
+
