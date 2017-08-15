@@ -13,6 +13,6 @@ GeneratedCHC=$(/usr/local/bin/chaincoind getinfo | awk '/"balance" :/ { print $3
 if [[ $GeneratedCHC == -* ]]; then
     exit 1
    else
-    usr/local/bin/chaincoind sendtoaddress $wallet $GeneratedCHC
+    /usr/local/bin/chaincoind sendtoaddress $wallet $GeneratedCHC
     exit 1
 fi
