@@ -31,6 +31,13 @@ cd /etc/update-motd.d/ && sudo wget https://raw.githubusercontent.com/joshpetric
 sudo rm /etc/update-motd.d/50-mn-count
 ```
 
+#### Chaincoin Masternode Auto Transfer
+
+This tool will automatically send (your acccount total - 1001) chc to a defined wallet address
+
+```
+cd /etc/cron.weekly/ && sudo wget https://raw.githubusercontent.com/joshpetrick/mnTools/master/chcwallettransfer.sh && sudo chmod 755 chcwallettransfer.sh && sudo chown jpetrick:jpetrick chcwallettransfer.sh
+```
 .
 
 ## License
