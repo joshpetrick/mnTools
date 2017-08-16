@@ -1,0 +1,37 @@
+Pie Coin Install
+
+Get VPS:
+http://www.vultr.com/?ref=7185024
+25 G
+Ubuntu 14.04
+
+make user:
+adduser <newUsername>
+usermod -aG sudo <newUsername>
+
+
+make room:
+sudo dd if=/dev/zero of=/var/swap.img bs=1024k count=1000;sudo mkswap /var/swap.img;sudo swapon /var/swap.img;sudo chmod 0600 /var/swap.img;sudo chown root:root /var/swap.img;sudo nano /etc/fstab
+
+(A nano editor will open up, append this to the last line and save)
+/var/swap.img none swap sw 0 0
+
+
+install dependencies:
+sudo apt-get update && sudo apt-get install automake && sudo apt-get install git && sudo apt-get install build-essential && sudo apt-get install libssl-dev && sudo apt-get install libdb++-dev && sudo apt-get install libboost-all-dev && sudo apt-get install libqrencode-dev
+
+
+
+install source:
+
+cd ~ && git clone https://github.com/PieCoinTech/PIE 
+cd ~/PIE/src &&  make -f makefile.unix USE_UPNP= strip PieCoind
+
+sudo cp ~/PIE/src/PieCoind /usr/local/bin/
+
+<paste node stuff in here>
+mkdir ~/.PieCoin/ && nano PieCoin.conf 
+
+Piecoind --daemon 
+#youll most likely have to ctrl +c outta here... not sure why
+
