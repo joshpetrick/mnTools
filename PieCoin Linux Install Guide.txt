@@ -25,13 +25,29 @@ sudo apt-get update && sudo apt-get install automake && sudo apt-get install git
 install source:
 
 cd ~ && git clone https://github.com/PieCoinTech/PIE 
-cd ~/PIE/src &&  make -f makefile.unix USE_UPNP= strip PieCoind
+cd ~/PIE/src &&  make -f makefile.unix USE_UPNP
+strip PieCoind
 
 sudo cp ~/PIE/src/PieCoind /usr/local/bin/
 
-<paste node stuff in here>
+
+##This is a Sample of what should be in PieConf.conf#####
+rpcuser=PieCoinlbc
+rpcpassword=2yZHiaeYLdgRvs3X7UVLSiKkBQc7dtD7T66YexTgb24gSV
+addnode=195.74.52.227
+##########################################################
+
 mkdir ~/.PieCoin/ && nano PieCoin.conf 
 
-Piecoind --daemon 
+<paste node stuff in here>
+  then ctrl x
+  y
+  enter
+  
+  
+
+
+
+PieCoind --daemon 
 #youll most likely have to ctrl +c outta here... not sure why
 
