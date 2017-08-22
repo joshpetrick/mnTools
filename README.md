@@ -45,6 +45,9 @@ crontab -e
 ```
 20 4 * * 4 /usr/local/bin/chcwallettransfer.sh
 .
+## NEW MASTERNODE
+Sign up. Listen to music. Earn coins. Make masternodes. Earn coins. Repeat
+<a href="http://bitrad.io/?ref=45925">Bitrad.io</a>
 
 ## License
 
