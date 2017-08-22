@@ -36,7 +36,7 @@ sudo rm /etc/update-motd.d/50-mn-count
 This tool will automatically send (your acccount total - 1001) chc to a defined wallet address
 
 ```
-cd /usr/local/bin && sudo wget https://raw.githubusercontent.com/joshpetrick/mnTools/master/chcwallettransfer.sh && sudo chmod 755 chcwallettransfer.sh && sudo chown jpetrick:jpetrick chcwallettransfer.sh 
+cd /usr/local/bin && sudo wget https://raw.githubusercontent.com/joshpetrick/mnTools/master/chcwallettransfer.sh && sudo chmod 755 chcwallettransfer.sh && sudo chown <username>:<username> chcwallettransfer.sh 
 ```
 
 edit your cron
