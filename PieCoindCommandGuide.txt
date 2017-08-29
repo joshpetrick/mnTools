@@ -79,6 +79,27 @@ Realize that before all of these commands its PieCoind...
 		-	this example will send 666.069 Pie to H324hakr948j11l4j1
 		PieCoind sendtoaddress H324hakr948j11l4j1 666.069
 
-7.help
+7.listtransactions	
+		*	Returns
+			"account" : "0",
+			"address" : "PMY4p9RrcomWQuUNcEmJqkvWLm1GBMuwdR",
+			"category" : "immature",
+			"amount" : 7.86945604,
+			"confirmations" : 10,
+			"generated" : true,
+			"blockhash" : "54dee5a30e91ec977cebbbaa2e8d61093d3d1f6c2a00d82e9214b7df44176dee",
+			"blockindex" : 1,
+			"blocktime" : 1503977616,
+			"txid" : "725e1e9ef3fc249b32742c292c357b530f7406fb18abae6196fa54e066c6c4b3",
+			"time" : 1503977616,
+			"timereceived" : 1503977616
+			
+		*	Main thing you should pay attention to with this command is...
+			- 	category
+				*	recieved means that someone sent you piecoin
+				*	generated means that it was generated eitehr via MN or staking
+				*	immature means??.. idk yet :) that it was generated early?
+		
+8.help
 	*	Returns	
 		- a list of every PieCoind command
