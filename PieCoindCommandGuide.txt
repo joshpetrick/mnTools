@@ -1,0 +1,84 @@
+Realize that before all of these commands its PieCoind...
+	-	an example for command 1. would look like:
+		PieCoind --daemon
+	
+1. --daemon
+	*	This is how you "start your wallet"
+	*	Your wallet needs to be started in order to run PieCoind commands..
+	*	After running this (current version) you will need to ctrl + c to get out of its
+	
+2. stop
+	*	This will stop your wallet
+	
+3. getinfo
+	*	Returns 
+			    "version" : "v1.0.0.1-g32a928e",
+				"protocolversion" : 99001,
+				"walletversion" : 60000,
+				"balance" : <your balance>,
+				"newmint" : 0.00000000,
+				"stake" : 0.00000000,
+				"blocks" : 359769,
+				"timeoffset" : 0,
+				"moneysupply" : 432255006.25448018,
+				"connections" : 123,
+				"proxy" : "",
+				"ip" : "<your ip>",
+				"difficulty" : {
+					"proof-of-work" : 0.00024414,
+					"proof-of-stake" : 1672535.68025897
+				},
+				"testnet" : false,
+				"keypoololdest" : 1502665337,
+				"keypoolsize" : 101,
+				"paytxfee" : 0.00010000,
+				"mininput" : 0.00000000,
+				"errors" : ""
+	*	Main thing you should pay attention to with this command is...
+		*	wallet version	
+			-	make sure its up to date
+		*	balance
+			-	your piecoin count on that server
+	*	If you dont get back something that looks like this its most likely because you dont have daemon
+		running. 
+
+4.getstakinginfo
+	*	Returns
+				"enabled" : true,
+				"staking" : true,
+				"errors" : "",
+				"currentblocksize" : 1000,
+				"currentblocktx" : 0,
+				"pooledtx" : 0,
+				"difficulty" : 1438092.22741191,
+				"search-interval" : 16,
+				"weight" : <weight based on your balance>,
+				"netstakeweight" : 2738201970991311,
+				"expectedtime" : 311717
+	*	Main thing you should pay attention to with this command is...
+		*	enabled
+			- lets you know if your wallet is enabled.. if your able to use the command then it is most likely enabled..
+		*	staking	
+			- after the wallet has been on for <staking period> and has a positive balance staking will be true
+			- if staking is false you either have a 0 balance or the coins arent mature yet
+
+5.getaccountaddress 0
+	*	Returns
+			- this is how you get your wallet address
+			- when doing your first deposit you should try a test amount first
+
+6.sendtoaddress <address> <amt>
+	*	Returns
+			- a transaction id
+			
+	*	you will need to swap out the <address> tag with your "to" address
+	*	you will need to swap out the <amt> tag with the amount you wish to sendtoaddress
+		- sometimes there is a transfer fee of like .0001 or something.. youll have to manually
+			account for that.. aka "math"
+	* 	full ex:
+		-	this example will send 666.069 Pie to H324hakr948j11l4j1
+		PieCoind sendtoaddress H324hakr948j11l4j1 666.069
+
+7.help
+	*	Returns	
+		- a list of every PieCoind command
