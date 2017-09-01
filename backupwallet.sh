@@ -1,42 +1,53 @@
 #!/bin/bash
 
-##########################################
-# Send Generated ChainCoins to your Wallet
-##########################################
+#########################################################################
+#																		#
+# 	Created by: Josh Petrick											#
+#	Date: 8/31/2017														#
+#																		#
+#	Purpose: This tool should be able to dynamically any coin			#
+#	Requirements: The binary will need to be stored in /usr/local/bin/	#
+#	Input: 																#
+#		req - name of the binary										#
+#		opt - name of backup dir (must be already made)					#
+#																		#	
+#	Ouput:																#
+#		the backup will be created in the file form of					#
+#		<date>.<binaryname>.wallet.dat									#
+#																		#
+#########################################################################
+
 # Name of the binary to use commands on ex: PieCoind
 binary=$1
-binarypath="/usr/local/bin/"$1
+binarypath="/usr/local/bin/"
 backuplocation=$2
-filename=$(date '+%d-%m-%y').wallet.dat
+date=$(date '+%d-%m-%y')
+filename=wallet.dat
 
 if [[ $# -gt 0 ]]
 then
-        if [ -f "$binarypath" ]
+        if [ -f "$binarypath$binary" ]
         then
-                echo "The binary $binarypath does zist"
                 if [ -f "$backuplocation" ]
                 then
-                        echo "$backuplocation exists.. usinng it"
                 else
-                        echo "Using current location: $(pwd)"
+                        echo "no ocation passed in. using current location: $(pwd)"
 						backuplocation=$(pwd) 
                 fi
+				output=$($binarypath$binary backupwallet $backuplocation/$date.$binary.$filename)
 				
-				Test=$($binarypath backupwallet $backuplocation/$filename)
-				echo "$Test"
-				
+				#checking to make sure backup was created
+				if [ -f "$backuplocation/$date.$binary.$filename" ]
+                then
+                        echo "$backuplocation/$date.$binary.$filename successfully created!."
+                else
+                        echo "there was an issue backing up"
+                fi
         else
-                echo "$binarypath doesnt zist"
+                echo "$binarypath$binary needs to exist!"
         fi
 else
 	echo "In order for this script to be dynamic you MUST enter a binary.. an example for Piecoin would be:"
 	echo "backupwallet.sh PieCoind ~/Backups/"
 fi
 
-#What wallet address would you like to send to? This is mine as an example. Be sure to change it!
-#walletaddress=$1
-
-#How much CHC did your Masternode Generate since last run?
-#Test=$(/usr/local/bin/PieCoind backupwallet $walletaddress)
-
-#echo "You chose: $walletaddress"
