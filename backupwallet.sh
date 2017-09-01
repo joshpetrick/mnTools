@@ -12,13 +12,17 @@ if [[ $# -gt 0 ]]
 then
         if [ -f "$binary" ]
         then
-                echo "$binary does zist"
+                echo "The binary $binary does zist"
                 if [ -f "$backuplocation" ]
                 then
-                        echo "$backuplocation zists"
+                        echo "$backuplocation exists.. usinng it"
                 else
-                        echo "Using current location"
+                        echo "Using current location: $(pwd)"
+						backuplocation=$(pwd) 
                 fi
+				#$backuplocation$filename
+				Test=$($binary getinfo)
+				
         else
                 echo "$binary doesnt zist"
         fi
