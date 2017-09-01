@@ -13,6 +13,6 @@ Generatedxcxt=$(/usr/local/bin/coinonatxd getinfo | awk '/"balance" :/ { print $
 if [[ $Generatedxcxt == -* ]]; then
     exit 1
    else
-    /usr/local/bin/chaincoind sendtoaddress $wallet $Generatedxcxt
+    /usr/local/bin/coinonatxd sendtoaddress $wallet $Generatedxcxt
     exit 1
 fi
