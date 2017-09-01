@@ -37,6 +37,11 @@ append the following at the bottom of the cronjob and then save and close
 ```
 
 
+
+
+
+## Coin Specific Tools
+
 ### Chaincoind Tools
 
 This section will be dedicated to chaincoin tools. Masternodes must be on Ubuntu system and must be configured as normal model and not
