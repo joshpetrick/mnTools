@@ -22,6 +22,7 @@ then
                 fi
 				#$backuplocation$filename
 				Test=$($binary getinfo)
+				echo "$Test"
 				
         else
                 echo "$binary doesnt zist"
