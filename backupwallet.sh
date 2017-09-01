@@ -4,15 +4,16 @@
 # Send Generated ChainCoins to your Wallet
 ##########################################
 # Name of the binary to use commands on ex: PieCoind
-binary="/usr/local/bin/"$1
+binary=$1
+binarypath="/usr/local/bin/"$1
 backuplocation=$2
 filename=$(date '+%d-%m-%y').wallet.dat
 
 if [[ $# -gt 0 ]]
 then
-        if [ -f "$binary" ]
+        if [ -f "$binarypath" ]
         then
-                echo "The binary $binary does zist"
+                echo "The binary $binarypath does zist"
                 if [ -f "$backuplocation" ]
                 then
                         echo "$backuplocation exists.. usinng it"
@@ -20,12 +21,12 @@ then
                         echo "Using current location: $(pwd)"
 						backuplocation=$(pwd) 
                 fi
-				#$backuplocation$filename
-				Test=$($binary getinfo)
+				
+				Test=$($binarypath backupwallet $backuplocation/$filename)
 				echo "$Test"
 				
         else
-                echo "$binary doesnt zist"
+                echo "$binarypath doesnt zist"
         fi
 else
 	echo "In order for this script to be dynamic you MUST enter a binary.. an example for Piecoin would be:"
