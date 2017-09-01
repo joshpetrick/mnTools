@@ -28,10 +28,9 @@ if [[ $# -gt 0 ]]
 then
         if [ -f "$binarypath$binary" ]
         then
-                if [ -f "$backuplocation" ]
+                if ! [ -f "$backuplocation" ]
                 then
-                else
-                        echo "no ocation passed in. using current location: $(pwd)"
+                        echo "no location passed in. using current location: $(pwd)"
 						backuplocation=$(pwd) 
                 fi
 				output=$($binarypath$binary backupwallet $backuplocation/$date.$binary.$filename)
