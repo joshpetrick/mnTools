@@ -1,14 +1,14 @@
-# Masternode Tools
+# **Masternode Tools**
 
 This Github is for the developement of masternode tools.
 
 ## Dynamic Tools
 This section will be dedicated to dynamic masternode and wallet tools.
 
-### Dynamic Wallet Backup Tool
+#### Dynamic Wallet Backup Tool
 With this script you will be able to back up any coin as long as the binary is installed on the system
 
-#### Dynamic Wallet Backup Tool Instructions
+###### Dynamic Wallet Backup Tool Instructions
 
 Copy the command below and make sure you change the <user> tags to be your system user!
 
@@ -42,12 +42,12 @@ append the following at the bottom of the cronjob and then save and close
 
 ## Coin Specific Tools
 
-### Chaincoind Tools
+#### Chaincoind Tools
 
 This section will be dedicated to chaincoin tools. Masternodes must be on Ubuntu system and must be configured as normal model and not
 controller styled model.
 
-#### Chaincoin Masternode Putty Login Status
+###### Chaincoin Masternode Putty Login Status
 
 This tool will update your welcome message so that everytime you login to putty you are greeted to:
   * Your MN Balance
@@ -59,7 +59,7 @@ This tool will update your welcome message so that everytime you login to putty 
     
  ![alt text](https://github.com/joshpetrick/mnTools/blob/master/MNStatustool.PNG)
     
-##### Installing
+###### Installing
 
 ```
 cd /etc/update-motd.d/ && sudo wget https://raw.githubusercontent.com/joshpetrick/mnTools/master/50-mn-count && sudo chmod 755 50-mn-count && run-parts .
