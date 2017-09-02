@@ -29,7 +29,7 @@ sudo apt-get update && sudo apt-get install automake && sudo apt-get install git
 install source:
 
 cd ~ && git clone https://github.com/PieCoinTech/PIE 
-cd ~/PIE/src &&  make -f makefile.unix
+cd ~/PIE/src &&  make -f makefile.unix USE_UPNP=
 strip PieCoind
 
 sudo cp ~/PIE/src/PieCoind /usr/local/bin/
