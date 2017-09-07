@@ -1,4 +1,7 @@
 Pie Coin Install
+est time to install: 60 - 90 minutes
+
+
 
 Get VPS:
 http://www.vultr.com/?ref=7185024
@@ -29,6 +32,8 @@ sudo apt-get update && sudo apt-get install automake && sudo apt-get install git
 install source:
 
 cd ~ && git clone https://github.com/PieCoinTech/PIE 
+
+** The make command can take upwards of an hour to run **
 cd ~/PIE/src &&  make -f makefile.unix USE_UPNP=
 strip PieCoind
 
